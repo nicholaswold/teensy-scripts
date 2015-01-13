@@ -1,10 +1,11 @@
 // Constants
-const int led = 13; // Teensy 3.1. led pin
-const int ds = 1000; // One second delay
+
+const int led = 13;
+const int ds = 1000;
 
 void setup() {
-  delay(ds); // Give me a second to connect
-  pinMode(led, OUTPUT); // ENGAGE STATUS LIGHT
+  delay(DS); // Give me a second to connect
+  pinMode(LED, OUTPUT); // ENGAGE STATUS LIGHT
   //digitalWrite(led, HIGH);
   
   spotlight("Terminal"); // open a terminal
@@ -32,11 +33,10 @@ void cmd(int key) {
 }
 
 void typeln(String cmd) {
-  // Keyboard.println(cmd);
   Keyboard.print(cmd);
-  delay(ds); // gives me a second to see what's happening
+  delay(ds);
   Keyboard.println("");
-  delay(ds*2); // give us some time to execute the command
+  delay(ds*2);
 }
 
 void loop() {
